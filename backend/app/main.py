@@ -1,9 +1,8 @@
-﻿from fastapi import Depends, FastAPI
+﻿
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import text
-from sqlalchemy.orm import Session
 
-from app.database.dependencies import get_db
+from app.api.routes.health import router as health_router
 
 app = FastAPI(
     title="Factory Inventory SaaS API",
@@ -19,19 +18,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.get("/health", tags=["Health"])
-def health_check():
-    return {"status": "healthy"}
-
-
-@app.get("/health/database", tags=["Health"])
-def database_health_check(db: Session = Depends(get_db)):
-    database_name = db.execute(
-        text("SELECT current_database()")
-    ).scalar_one()
-
-    return {
-        "status": "healthy",
-        "database": database_name,
-    }
+app.include_router(health_router)
