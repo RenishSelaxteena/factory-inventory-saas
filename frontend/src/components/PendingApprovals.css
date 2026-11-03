@@ -1,0 +1,124 @@
+
+.approvals-card {
+  min-width: 0;
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.approvals-header,
+.approvals-heading {
+  display: flex;
+  align-items: center;
+}
+
+.approvals-header {
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.approvals-heading {
+  gap: 12px;
+}
+
+.approvals-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #E6EEF3;
+  color: var(--color-info);
+}
+
+.approvals-heading h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.approvals-heading p {
+  margin: 5px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+.approvals-count {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.approvals-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.approval-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.approval-reference {
+  color: var(--color-info);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.approval-item-details h4 {
+  margin: 5px 0;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.approval-item-details p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+.approval-status {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.approval-status.pending {
+  background: #F8EEDC;
+  color: var(--color-warning);
+}
+
+.approval-status.review {
+  background: #E6EEF3;
+  color: var(--color-info);
+}
+
+.approvals-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+@media (max-width: 520px) {
+  .approvals-card {
+    padding: 16px;
+  }
+}
